@@ -7,7 +7,9 @@
 export const up = function (knex) {
   return knex.schema.createTable('cars', (table) => {
     table.increments('id')
-    table.string('cars')
+    table.string('make')
+    table.string('model')
+    table.string('year')
   })
 }
 

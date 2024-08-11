@@ -6,8 +6,8 @@ export async function seed(knex) {
   // Deletes ALL existing entries
   await knex('cars').del()
   await knex('cars').insert([
-    { id: 1, cars: 'Subaru Impreza' },
-    { id: 2, cars: 'Maserati Quattroporte' },
-    { id: 3, cars: 'Toyota Hilux' },
+    { id: 1, make: 'Subaru', model: 'Impreza', year: '2004' },
+    { id: 2, make: 'Maserati', model: 'Quattroporte', year: '2009' },
+    { id: 3, make: 'Toyota', model: 'Hilux', year: '1990' },
   ])
 }
