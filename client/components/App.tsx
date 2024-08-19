@@ -1,15 +1,11 @@
-import { Outlet } from 'react-router-dom'
-
 function App() {
   return (
-    <div>
+    <>
       <header className="header">
-        <h1>Om&apos;s favourite cars!</h1>
+        <h1>My Collection</h1>
       </header>
-      <main>
-        <Outlet />
-      </main>
-    </div>
+      <section className="main">{/* add your code here */}</section>
+    </>
   )
 }
 
