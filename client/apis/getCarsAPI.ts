@@ -3,7 +3,7 @@ import { carLayout } from '../../models/carLayout'
 
 const urlRoot = '/api/v1'
 
-export async function fetchCars(): Promise<carLayout[]> {
+export async function getCarsAPI(): Promise<carLayout[]> {
   try {
     const response = await request.get(`${urlRoot}/cars`)
     return response.body as carLayout[]

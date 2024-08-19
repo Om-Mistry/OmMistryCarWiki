@@ -10,6 +10,7 @@ export const up = function (knex) {
     table.string('make')
     table.string('model')
     table.string('year')
+    table.string('image_url')
   })
 }
 
