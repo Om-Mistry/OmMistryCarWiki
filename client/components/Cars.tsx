@@ -6,12 +6,19 @@ export default function DBCars() {
   const [carsLoading, setCarsLoading] = useState(true)
   const [error, setError] = useState(null)
 
+
   useEffect(() => {
     const fetchCarData = async () => {
-      const data = await getDBCars()
-      setDBCars(data)
+      try {
+        const data = await getDBCars()
+        setCars(data)
+      } catch (error) {
+        setError(error.message)
+      } finally {
+        setLoading(false)
+      }
     }
-
     fetchCarData()
   }, [])
+
 }
