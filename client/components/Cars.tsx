@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react"
-import { getDBCars } from "../apis/getDBCars"
+import { useEffect, useState } from 'react'
+import { getDBCars } from '../apis/getDBCars'
 
-export default function displayCars() {
+export default function DBCars() {
+  const [cars, setCars] = useState([])
+  const [carsLoading, setCarsLoading] = useState(true)
+  const [error, setError] = useState(null)
+
   useEffect(() => {
     const fetchCarData = async () => {
       const data = await getDBCars()
-      console.log(data)
+      setDBCars(data)
     }
+
     fetchCarData()
   }, [])
 }
