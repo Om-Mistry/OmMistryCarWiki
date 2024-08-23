@@ -11,7 +11,7 @@ export async function seed(knex) {
       make: 'Subaru',
       model: 'Impreza',
       year: '2004',
-      image_url:
+      image:
         'https://s1.cdn.autoevolution.com/images/news/big-mile-2004-subaru-impreza-wrx-sti-shines-affordable-in-world-rally-blue-177115-7.jpg',
     },
     {
@@ -19,14 +19,14 @@ export async function seed(knex) {
       make: 'Maserati',
       model: 'Quattroporte',
       year: '2009',
-      image_url: 'https://wallpapercave.com/wp/wp1981479.jpg',
+      image: 'https://wallpapercave.com/wp/wp1981479.jpg',
     },
     {
       id: 3,
       make: 'Toyota',
       model: 'Hilux',
       year: '1990',
-      image_url:
+      image:
         'https://jdmsupply.com/storage/images/vehicle/246/MFT1A827BvLEcYOCd4lvEhwRG92nOQ6xsyJvOk5d_1440x1080.webp',
     },
   ])
