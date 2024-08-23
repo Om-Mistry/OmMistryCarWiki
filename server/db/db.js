@@ -1,7 +1,4 @@
-import knexfile from './knexfile.js'
-import knex from 'knex'
-
-const connection = knex(knexfile.development) // connection
+import connection from './connection.js'
 
 const db = connection
 
@@ -10,6 +7,7 @@ export function getCars() {
 }
 
 // Your DB functions go here
+
 export function close() {
   db.destroy()
 }

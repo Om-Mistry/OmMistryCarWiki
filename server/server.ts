@@ -1,5 +1,5 @@
 import express from 'express'
-import { getCars } from '../db'
+import { getCars } from './db/db'
 
 const server = express()
 server.use(express.json())

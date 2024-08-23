@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { carLayout } from '../../models/carLayout'
-import { getCars } from '../../db'
+import { getCars } from '../../server/db/db'
 
 export default function DBCars() {
   const {
