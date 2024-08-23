@@ -1,4 +1,5 @@
-import DBCars from './Cars'
+// In App.tsx or a relevant parent component
+import CarList from './carList'
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
         <h1>Om&apos;s car collection!</h1>
       </header>
       <section className="main">
-        <DBCars />
+        <CarList />
       </section>
     </>
   )
