@@ -1,16 +1,9 @@
 import express from 'express'
-import { getCars } from './db/db'
+import carsRouter from './routes/cars.ts'
 
 const server = express()
 server.use(express.json())
 
-server.get('/api/v1/cars', async (req, res) => {
-  try {
-    const cars = await getCars()
-    res.json(cars)
-  } catch (err) {
-    res.status(500).json({ error: 'Cannot get cars' })
-  }
-})
+server.use('/api/v1/cars', carsRouter)
 
 export default server
