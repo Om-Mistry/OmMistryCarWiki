@@ -8,11 +8,3 @@ export async function getDBCars(): Promise<carLayout[]> {
 
 const data = getDBCars()
 console.log(data)
-
-getDBCars()
-  .then((data) => {
-    console.log(data)
-  })
-  .catch((error) => {
-    console.error('Error getting the awesome cars', error)
-  })

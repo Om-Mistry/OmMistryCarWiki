@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { carLayout } from '../../models/carLayout'
-import { getCars } from '../../server/db/db'
+import { getDBCars } from '../apis/getDBCars'
+import '../styles/cars.css'
 
 export default function DBCars() {
   const {
@@ -9,7 +10,7 @@ export default function DBCars() {
     isLoading,
   } = useQuery<carLayout[], Error>({
     queryKey: ['cars'],
-    queryFn: getCars,
+    queryFn: getDBCars,
   })
 
   if (isLoading) return <p>Cars are loading!</p>
@@ -18,22 +19,24 @@ export default function DBCars() {
   console.log(cars)
 
   return (
-    <>
+    <section className="carList">
       <h2>My Car List</h2>
-      <ul>
+      <div className="carGrid">
         {cars?.map((car) => (
-          <li key={car.id}>
-            <h3>
-              {car.make} {car.model}
-            </h3>
+          <div className="carItem" key={car.id}>
             <img
               src={car.image_url}
               alt={`${car.make} ${car.model}`}
-              style={{ width: '300px' }}
+              className="carImage"
             />
-          </li>
+            <div className="carItem">
+              <h3>
+                {car.make} {car.model}
+              </h3>
+            </div>
+          </div>
         ))}
-      </ul>
-    </>
+      </div>
+    </section>
   )
 }
