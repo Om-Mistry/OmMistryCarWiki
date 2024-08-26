@@ -11,5 +11,10 @@ export async function getCarById(id: string): Promise<carLayout> {
   return response.body
 }
 
+export async function addCar(newCar: carLayout): Promise<carLayout> {
+  const response = await request.post('/api/v1/cars').send(newCar)
+  return response.body
+}
+
 const data = getDBCars()
 console.log(data)
