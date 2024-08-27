@@ -16,5 +16,17 @@ export async function addCarDB(newCar: carLayout): Promise<carLayout> {
   return response.body
 }
 
+export async function deleteCar(id: number): Promise<void> {
+  await request.delete(`/api/v1/cars/${id}`)
+}
+
+export async function updateCarDB(
+  id: number,
+  updatedCar: carLayout,
+): Promise<carLayout> {
+  const response = await request.put(`/api/v1/cars/${id}`).send(updatedCar)
+  return response.body
+}
+
 const data = getDBCars()
 console.log(data)

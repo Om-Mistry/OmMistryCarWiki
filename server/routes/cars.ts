@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { getCars } from '../db/db'
-import { addCarDB } from '../../client/apis/getDBCars'
+import { addCarDB, updateCarDB, deleteCar } from '../../client/apis/getDBCars'
 
 const router = Router()
 
@@ -20,6 +20,27 @@ router.post('/', async (req, res) => {
     res.status(201).json(addedCar)
   } catch (err) {
     res.status(500).json({ error: 'Can not get the cool cars' })
+  }
+})
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    await deleteCar(Number(id))
+    res.status(204).end()
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to delete car' })
+  }
+})
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params
+  const updatedCar = req.body
+  try {
+    const result = await updateCarDB(Number(id), updatedCar)
+    res.status(200).json(result)
+  } catch (err) {
+    res.status(500).json({ error: 'Could not update car' })
   }
 })
 
