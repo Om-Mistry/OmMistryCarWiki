@@ -27,6 +27,3 @@ export async function updateCarDB(
   const response = await request.put(`/api/v1/cars/${id}`).send(updatedCar)
   return response.body
 }
-
-const data = getDBCars()
-console.log(data)

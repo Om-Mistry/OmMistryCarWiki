@@ -1,24 +1,31 @@
-import { useParams } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import { carLayout } from '../../models/carLayout'
-import { getCarById } from '../../server/db/db'
-import '../styles/cars.css'
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { carLayout } from '../../models/carLayout';
+import { getCarById } from '../apis/getDBCars';
+import '../styles/cars.css';
 
 export default function CarDetail() {
-  const { id } = useParams<{ id: string }>()
+  const { id } = useParams<{ id: string }>();
+
   const {
     data: car,
     error,
     isLoading,
   } = useQuery<carLayout, Error>({
     queryKey: ['car', id],
-    queryFn: () => getCarById(Number(id)),
+    queryFn: () => {
+      if (id) {
+        return getCarById(id);
+      } else {
+        throw new Error('ID is required');
+      }
+    },
   })
 
-  if (isLoading) return <p>Loading car details...</p>
-  if (error) return <p>Error: {error.message}</p>
+  if (isLoading) return <p>Loading car details...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
-  if (!car) return <p>No car found!</p>
+  if (!car) return <p>No car found!</p>;
 
   return (
     <section className="carDetail">
@@ -33,5 +40,5 @@ export default function CarDetail() {
         <p>{car.description}</p>
       </div>
     </section>
-  )
+  );
 }
