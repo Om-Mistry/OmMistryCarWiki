@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { getCars } from '../db/db'
 import { addCarDB, updateCarDB, deleteCar } from '../../client/apis/getDBCars'
+import { getCarById } from '../db/db'
 
 const router = Router()
 
@@ -41,6 +42,20 @@ router.put('/:id', async (req, res) => {
     res.status(200).json(result)
   } catch (err) {
     res.status(500).json({ error: 'Could not update car' })
+  }
+})
+
+router.get('/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    const car = await getCarById(Number(id))
+    if (car) {
+      res.json(car)
+    } else {
+      res.status(404).json({ error: 'Car does not exist yet' })
+    }
+  } catch (err) {
+    res.status(500).json({ error: 'Can not get car details' })
   }
 })
 

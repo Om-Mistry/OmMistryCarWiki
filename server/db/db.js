@@ -26,3 +26,8 @@ export function editCarsDB(id, updatedCar) {
   const result = db('cars').where('id', id).update(updatedCar)
   return result
 }
+
+export function getCarById(id) {
+  const result = db('cars').where({ id }).first()
+  return result
+}

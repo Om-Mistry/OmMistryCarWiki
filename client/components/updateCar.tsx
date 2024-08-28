@@ -11,6 +11,7 @@ export default function UpdateCar({ car }: { car: carLayout }) {
     model: car.model,
     year: car.year,
     image_url: car.image_url,
+    description: '',
   })
 
   const mutation = useMutation({

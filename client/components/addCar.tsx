@@ -11,6 +11,7 @@ export default function AddCar() {
     model: '',
     year: '',
     image_url: '',
+    description: '',
   })
 
   const mutation = useMutation({

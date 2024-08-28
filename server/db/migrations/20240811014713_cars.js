@@ -11,6 +11,7 @@ export const up = function (knex) {
     table.string('model')
     table.string('year')
     table.string('image')
+    table.string('description')
   })
 }
 

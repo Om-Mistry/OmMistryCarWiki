@@ -4,4 +4,5 @@ export interface carLayout {
   model: string
   year: string
   image_url: string
+  description: string
 }

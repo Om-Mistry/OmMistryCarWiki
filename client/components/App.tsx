@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import CarList from './carList'
+import CarDetail from '../components/carDetail'
+
 import '../styles/cars.css'
-//import carDetail from '../components/carDetail.tsx'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <section className="main">
         <Routes>
           <Route path="/" element={<CarList />} />
+          <Route path="/cars/:id" element={<CarDetail />} />
         </Routes>
       </section>
     </Router>
