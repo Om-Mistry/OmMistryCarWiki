@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import CarDetail from './CarDetail'
-import DBCars from './Cars'
+import DBCars from './FirstCarPage'
 //import CarList from './CarList'
 
 import '../styles/cars.css'

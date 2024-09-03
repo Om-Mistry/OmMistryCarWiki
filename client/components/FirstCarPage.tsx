@@ -1,5 +1,5 @@
-
 import { useQuery } from '@tanstack/react-query'
+import { Link } from 'react-router-dom'
 import { carLayout } from '../../models/carLayout'
 import { getDBCars } from '../apis/getDBCars'
 import '../styles/cars.css'
@@ -32,7 +32,9 @@ export default function DBCars() {
             />
             <div className="carItem">
               <h3>
-                {car.make} {car.model}
+                <Link to={`/cars/${car.id}`}>
+                  {car.make} {car.model}
+                </Link>
               </h3>
             </div>
           </div>
