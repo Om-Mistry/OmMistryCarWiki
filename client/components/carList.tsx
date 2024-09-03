@@ -5,17 +5,21 @@ import { carLayout } from '../../models/carLayout'
 import '../styles/cars.css'
 
 const CarList = () => {
-  const { data: cars, error, isLoading } = useQuery<carLayout[], Error>({
+  const {
+    data: cars,
+    error,
+    isLoading,
+  } = useQuery<carLayout[], Error>({
     queryKey: ['cars'],
     queryFn: getCars,
   })
 
   if (isLoading) {
-    return <div>Loading cars...</div>
+    return <div>Cars are loading now!</div>
   }
 
   if (error) {
-    return <div>Error loading cars: {error.message}</div>
+    return <div>You have an error:{error.message}</div>
   }
 
   return (
