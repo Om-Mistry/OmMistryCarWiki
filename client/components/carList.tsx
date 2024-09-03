@@ -1,25 +1,21 @@
 import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
-import '../styles/cars.css'
-import { carLayout } from '../../models/carLayout'
 import { getCars } from '../../server/db/db'
+import { carLayout } from '../../models/carLayout'
+import '../styles/cars.css'
 
 const CarList = () => {
-  const {
-    data: cars,
-    error,
-    isLoading,
-  } = useQuery<carLayout[], Error>({
+  const { data: cars, error, isLoading } = useQuery<carLayout[], Error>({
     queryKey: ['cars'],
     queryFn: getCars,
   })
 
   if (isLoading) {
-    return <div>Cool cars are incoming!</div>
+    return <div>Loading cars...</div>
   }
 
   if (error) {
-    return <div>The error with the cars is: {error.message}</div>
+    return <div>Error loading cars: {error.message}</div>
   }
 
   return (
