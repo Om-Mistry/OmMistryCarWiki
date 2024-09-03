@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import CarList from './carList'
-import CarDetail from '../components/carDetail'
+import CarDetail from './CarDetail'
+import DBCars from './Cars'
+//import CarList from './CarList'
 
 import '../styles/cars.css'
 
@@ -12,7 +13,7 @@ function App() {
       </header>
       <section className="main">
         <Routes>
-          <Route path="/" element={<CarList />} />
+          <Route path="/" element={<DBCars />} />
           <Route path="/cars/:id" element={<CarDetail />} />
         </Routes>
       </section>

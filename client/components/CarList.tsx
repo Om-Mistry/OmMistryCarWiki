@@ -1,3 +1,4 @@
+/*
 import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import { getCars } from '../../server/db/db'
@@ -48,3 +49,4 @@ const CarList = () => {
 }
 
 export default CarList
+*/
