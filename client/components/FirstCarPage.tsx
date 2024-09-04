@@ -30,7 +30,7 @@ export default function DBCars() {
         {cars?.map((car) => (
           <div className="carItem" key={car.id}>
             <img
-              src={car.image_url}
+              src={car.image}
               alt={`${car.make} ${car.model}`}
               className="carImage"
             />

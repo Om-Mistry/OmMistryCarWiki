@@ -10,7 +10,7 @@ export default function AddCar() {
     make: '',
     model: '',
     year: '',
-    image_url: '',
+    image: '',
     description: '',
   })
 
@@ -48,8 +48,8 @@ export default function AddCar() {
       />
       <input
         type="text"
-        value={newCar.image_url}
-        onChange={(e) => setNewCar({ ...newCar, image_url: e.target.value })}
+        value={newCar.image}
+        onChange={(e) => setNewCar({ ...newCar, image: e.target.value })}
         placeholder="Car Image URL"
       />
       <button type="submit">Add a brand new car!</button>

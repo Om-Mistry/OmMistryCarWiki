@@ -3,6 +3,6 @@ export interface carLayout {
   make: string
   model: string
   year: string
-  image_url: string
+  image: string
   description: string
 }
