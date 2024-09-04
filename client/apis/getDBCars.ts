@@ -16,7 +16,6 @@ export async function addCarDB(newCar: Omit<carLayout, 'id'>): Promise<carLayout
   return response.body
 }
 
-
 export async function deleteCar(id: number): Promise<void> {
   await request.delete(`/api/v1/cars/${id}`)
 }
