@@ -18,9 +18,10 @@ export function deleteCarsDB(id) {
 }
 
 export function addCarsDB(car) {
-  const result = db('cars').insert(car)
+  const result = db('cars').insert(car).returning('*') 
   return result
 }
+
 
 export function editCarsDB(id, updatedCar) {
   const result = db('cars').where('id', id).update(updatedCar)

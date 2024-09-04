@@ -11,10 +11,11 @@ export async function getCarById(id: string): Promise<carLayout> {
   return response.body
 }
 
-export async function addCarDB(newCar: carLayout): Promise<carLayout> {
+export async function addCarDB(newCar: Omit<carLayout, 'id'>): Promise<carLayout> {
   const response = await request.post('/api/v1/cars').send(newCar)
   return response.body
 }
+
 
 export async function deleteCar(id: number): Promise<void> {
   await request.delete(`/api/v1/cars/${id}`)
