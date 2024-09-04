@@ -10,7 +10,7 @@ export default function UpdateCar({ car }: { car: carLayout }) {
     make: car.make,
     model: car.model,
     year: car.year,
-    image_url: car.image_url,
+    image: car.image,
     description: '',
   })
 
@@ -55,9 +55,9 @@ export default function UpdateCar({ car }: { car: carLayout }) {
       />
       <input
         type="text"
-        value={updatedCar.image_url}
+        value={updatedCar.image}
         onChange={(e) =>
-          setUpdatedCar({ ...updatedCar, image_url: e.target.value })
+          setUpdatedCar({ ...updatedCar, image: e.target.value })
         }
         placeholder="Car Image URL"
       />

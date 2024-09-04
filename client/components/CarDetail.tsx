@@ -30,7 +30,7 @@ export default function CarDetail() {
   return (
     <section className="carDetail">
       <img
-        src={car.image_url}
+        src={car.image}
         alt={`${car.make} ${car.model}`}
         className="carImage"
       />
