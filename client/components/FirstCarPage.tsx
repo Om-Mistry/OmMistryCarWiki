@@ -24,22 +24,18 @@ export default function DBCars() {
 
   return (
     <section className="carList">
-      <h2>My Car List</h2>
+      <h1>My Car List</h1>
       <AddCar />
       <div className="carGrid">
         {cars?.map((car) => (
           <div className="carItem" key={car.id}>
-            <img
-              src={car.image}
-              alt={`${car.make} ${car.model}`}
-              className="carImage"
-            />
+            <img src={car.image} alt={``} className="carImage" />
             <div className="carItemDetails">
-              <h3>
+              <h2>
                 <Link to={`/cars/${car.id}`}>
                   {car.make} {car.model}
                 </Link>
-              </h3>
+              </h2>
               <UpdateCar car={car} />
               <DeleteCar carId={car.id!} />
             </div>

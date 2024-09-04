@@ -28,30 +28,57 @@ export default function AddCar() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={newCar.make}
-        onChange={(e) => setNewCar({ ...newCar, make: e.target.value })}
-        placeholder="Car Make"
-      />
-      <input
-        type="text"
-        value={newCar.model}
-        onChange={(e) => setNewCar({ ...newCar, model: e.target.value })}
-        placeholder="Car Model"
-      />
-      <input
-        type="text"
-        value={newCar.year}
-        onChange={(e) => setNewCar({ ...newCar, year: e.target.value })}
-        placeholder="Car Year"
-      />
-      <input
-        type="text"
-        value={newCar.image}
-        onChange={(e) => setNewCar({ ...newCar, image: e.target.value })}
-        placeholder="Car Image URL"
-      />
+      <div>
+        <label htmlFor="car-make">Car Make</label>
+        <input
+          type="text"
+          id="car-make"
+          value={newCar.make}
+          onChange={(e) => setNewCar({ ...newCar, make: e.target.value })}
+          placeholder="Car Make"
+        />
+      </div>
+      <div>
+        <label htmlFor="car-model">Car Model</label>
+        <input
+          type="text"
+          id="car-model"
+          value={newCar.model}
+          onChange={(e) => setNewCar({ ...newCar, model: e.target.value })}
+          placeholder="Car Model"
+        />
+      </div>
+      <div>
+        <label htmlFor="car-year">Car Year</label>
+        <input
+          type="text"
+          id="car-year"
+          value={newCar.year}
+          onChange={(e) => setNewCar({ ...newCar, year: e.target.value })}
+          placeholder="Car Year"
+        />
+      </div>
+      <div>
+        <label htmlFor="car-image-url">Car Image URL</label>
+        <input
+          type="text"
+          id="car-image-url"
+          value={newCar.image}
+          onChange={(e) => setNewCar({ ...newCar, image: e.target.value })}
+          placeholder="Car Image URL"
+        />
+      </div>
+      <div>
+        <label htmlFor="car-description">Car Description</label>
+        <textarea
+          id="car-description"
+          value={newCar.description}
+          onChange={(e) =>
+            setNewCar({ ...newCar, description: e.target.value })
+          }
+          placeholder="Car Description"
+        />
+      </div>
       <button type="submit">Add a brand new car!</button>
     </form>
   )

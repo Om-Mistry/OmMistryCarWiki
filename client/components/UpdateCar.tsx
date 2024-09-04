@@ -33,35 +33,61 @@ export default function UpdateCar({ car }: { car: carLayout }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={updatedCar.make}
-        onChange={(e) => setUpdatedCar({ ...updatedCar, make: e.target.value })}
-        placeholder="Car Make"
-      />
-      <input
-        type="text"
-        value={updatedCar.model}
-        onChange={(e) =>
-          setUpdatedCar({ ...updatedCar, model: e.target.value })
-        }
-        placeholder="Car Model"
-      />
-      <input
-        type="text"
-        value={updatedCar.year}
-        onChange={(e) => setUpdatedCar({ ...updatedCar, year: e.target.value })}
-        placeholder="Car Year"
-      />
-      <input
-        type="text"
-        value={updatedCar.image}
-        onChange={(e) =>
-          setUpdatedCar({ ...updatedCar, image: e.target.value })
-        }
-        placeholder="Car Image URL"
-      />
-      <button type="submit">Update one of the awesome cars</button>
+      <div>
+        <label htmlFor={`make-${car.id}`}>Make</label>
+        <input
+          type="text"
+          id={`make-${car.id}`}
+          value={updatedCar.make}
+          onChange={(e) =>
+            setUpdatedCar({ ...updatedCar, make: e.target.value })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor={`model-${car.id}`}>Model</label>
+        <input
+          type="text"
+          id={`model-${car.id}`}
+          value={updatedCar.model}
+          onChange={(e) =>
+            setUpdatedCar({ ...updatedCar, model: e.target.value })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor={`year-${car.id}`}>Year</label>
+        <input
+          type="text"
+          id={`year-${car.id}`}
+          value={updatedCar.year}
+          onChange={(e) =>
+            setUpdatedCar({ ...updatedCar, year: e.target.value })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor={`image-url-${car.id}`}>Image URL</label>
+        <input
+          type="text"
+          id={`image-url-${car.id}`}
+          value={updatedCar.image}
+          onChange={(e) =>
+            setUpdatedCar({ ...updatedCar, image: e.target.value })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor={`description-${car.id}`}>Description</label>
+        <textarea
+          id={`description-${car.id}`}
+          value={updatedCar.description}
+          onChange={(e) =>
+            setUpdatedCar({ ...updatedCar, description: e.target.value })
+          }
+        />
+      </div>
+      <button type="submit">Update Car</button>
     </form>
   )
 }

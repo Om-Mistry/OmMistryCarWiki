@@ -29,13 +29,11 @@ export default function CarDetail() {
 
   return (
     <section className="carDetail">
-      <img
-        src={car.image}
-        alt={`${car.make} ${car.model}`}
-        className="carImage"
-      />
+      <img src={car.image} alt={``} className="carImage" />
       <div className="carDetails">
-        <h3>{car.make} {car.model}</h3>
+        <h1>
+          {car.make} {car.model}
+        </h1>
         <p>Year: {car.year}</p>
         <p>{car.description}</p>
       </div>
