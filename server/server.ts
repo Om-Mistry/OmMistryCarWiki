@@ -1,11 +1,14 @@
-import * as Path from 'node:path'
-
 import express from 'express'
+import carsRouter from './routes/cars.ts'
 
 const server = express()
 server.use(express.json())
 
-// ADD YOUR API ROUTES HERE
+server.use('/api/v1/cars', carsRouter)
+
+export default server
+
+import * as Path from 'node:path'
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
@@ -14,5 +17,3 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(Path.resolve('./dist/index.html'))
   })
 }
-
-export default server
